@@ -1,0 +1,3 @@
+const multiplyby = (multiplier) =>
+  (number) =>
+    multiplier * number;
