@@ -2,14 +2,14 @@ export default
 `import { connect } from 'react-redux';
 import { ExampleComponent } from './example.component';
 
-mapStateToProp = (state) => ({
+mapStateToProps = (state) => ({
   counter: state.counter,
-  isButtonActive: state.isButtonActive,
+  areButtonsActive: state.areButtonsActive,
 });
 
 mapDispatchToProps = (dispatch) => ({
-  setIsButtonActive = (bool) => dispatch({
-    type: 'SET_IS_BUTTON_ACTIVE',
+  setAreButtonsActive = (bool) => dispatch({
+    type: 'SET_ARE_BUTTONS_ACTIVE',
     payload: bool
   }),
   setCounter = (number) => dispatch({
@@ -19,9 +19,9 @@ mapDispatchToProps = (dispatch) => ({
 });
 
 export const ExampleContainer = connect(
-  mapStateToProp,
+  mapStateToProps,
   mapDispatchToProps,
-)(Example)
+)(ExampleComponent)
 
 
 

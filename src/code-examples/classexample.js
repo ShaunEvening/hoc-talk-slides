@@ -1,53 +1,42 @@
 export default
 `import React from 'react';
-import {
-  View,
-  Switch,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
 import { connect } from 'react-redux';
 
 class ExampleComponent extends Component {
   render() {
     const {
-      isButtonActive,
+      areButtonsActive,
       counter,
     } = this.props;
     return (
-      <View>
-        <View>
-          <Text>{counter}</Text>
-        </View>
-        <View>
-          <TouchableOpacity
-            disabled={!isButtonActive}
-            onPress={this.handleCounterDecrement}
-          >
-            <Text>Decrement</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-            disabled={!isButtonActive}
-            onPress={this.handleCounterIncrement}
-          >
-            <Text>Increment</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <Text>Is Counter active?</Text>
-          <Switch
-            value={isButtonActive}
-            onValueChange={this.handleIsButtonActive}
-          />
-        </View>
-      </View>
-    )
+      <div>
+        <div>
+          <h1>{counter}</h1>
+        </div>
+        <button
+          onClick={this.handleCounterIncrement}
+          disabled={!areButtonsActive}
+        >
+          INCREMENT
+        </button>
+        <button
+          onClick={this.handleCounterDecrement}
+          disabled={!areButtonsActive}
+        >
+          DECREMENT
+        </button>
+        <h4>Adjust Counter?</h4>
+        <input
+          type="checkbox"
+          value={areButtonsActive}
+          onChange={this.handleAreButtonsActive}
+        />
+      </div>
+    );
   }
 
-  handleIsButtonActive = () => {
-    this.props.setIsButtonActive(!this.props.isButtonActive);
+  handleAreButtonsActive = () => {
+    this.props.setAreButtonsActive(!this.props.areButtonsActive);
   }
 
   handleCounterIncrement = () => {
@@ -59,14 +48,14 @@ class ExampleComponent extends Component {
   }
 }
 
-mapStateToProp = (state) => ({
+mapStateToProps = (state) => ({
   counter: state.counter,
-  isButtonActive: state.isButtonActive,
+  areButtonsActive: state.areButtonsActive,
 });
 
 mapDispatchToProps = (dispatch) => ({
-  setIsButtonActive = (bool) => dispatch({
-    type: 'SET_IS_BUTTON_ACTIVE',
+  setAreButtonsActive = (bool) => dispatch({
+    type: 'SET_ARE_BUTTONS_ACTIVE',
     payload: bool
   }),
   setCounter = (number) => dispatch({
