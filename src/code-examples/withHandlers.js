@@ -5,11 +5,11 @@ import { ExampleComponent } from './example.component';
 
 mapStateToProp = (state) => ({
   counter: state.counter,
-  isButtonActive: state.isButtonActive,
+  areButtonsActive: state.isButtonActive,
 });
 
 mapDispatchToProps = (dispatch) => ({
-  setIsButtonActive = (bool) => dispatch({
+  setAreButtonsActive = (bool) => dispatch({
     type: 'SET_IS_BUTTON_ACTIVE',
     payload: bool
   }),
@@ -20,8 +20,8 @@ mapDispatchToProps = (dispatch) => ({
 });
 
 const ExampleWithHandlers = withHandlers({
-  handleIsButtonActive: (props) =>
-    () => props.setIsButtonActive(!props.isButtonActive),
+  handleAreButtonsActive: (props) =>
+    () => props.setAreButtonsActive(!props.areButtonsActive),
   handleCounterIncrement: (props) =>
     () => props.setCounter(props.counter + 1),
   handleCounterDecrement: (props) =>

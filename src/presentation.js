@@ -139,14 +139,6 @@ export default class Presentation extends Component {
           </List>
         </Slide>
 
-        <Slide>
-          <Image
-            src="https://static.fjcdn.com/pictures/Under_012f72_2018186.jpg"
-            alt="Underpants Gnomes"
-            width="80%"
-          />
-        </Slide>
-
         <Slide transition={['spin']} bgColor="primary">
           <Heading textColor="secondary">React + Redux</Heading>
         </Slide>
@@ -188,19 +180,15 @@ export default class Presentation extends Component {
           code={require('./code-examples/classexample.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,0], title: 'Class ExampleComponent' },
-            { loc: [0,8], note: 'imports'},
-            { loc: [60,64], note: 'mapStateToProp' },
-            { loc: [65,75], note: 'mapDispatchToProps' },
-            { loc: [9,10], note: 'Class Component' },
-            { loc: [10,15] },
-            { loc: [18,19], note: 'counter' },
-            { loc: [21,27], note: 'decrement button' },
-            { loc: [29,35], note: 'increment button' },
-            { loc: [37,42], note: 'switch to (de)active buttons' },
-            { loc: [47,58] },
-            { loc: [76,80] },
-            { loc: [79,80] }
+            { loc: [0,0], title: 'Class Component' },
+            { loc: [0,2] },
+            { loc: [3,4] },
+            { loc: [4,33] },
+            { loc: [34,46] },
+            { loc: [47,51] },
+            { loc: [52,63] },
+            { loc: [63,70] },
+            { loc: [66,67]}
           ]}
         />}
 
@@ -209,7 +197,7 @@ export default class Presentation extends Component {
           code={require('./code-examples/containerv1.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,0], title: 'ExampleContainer' },
+            { loc: [0,0], title: 'Container' },
             { loc: [0,23] },
           ]}
         />}
@@ -219,15 +207,9 @@ export default class Presentation extends Component {
           code={require('./code-examples/functionalcomponent.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,0], title: 'Functional ExampleComponent' },
-            { loc: [0,8], note: 'imports'},
-            { loc: [8,14], note: 'stateless function component' },
-            { loc: [16,17], note: 'counter' },
-            { loc: [19,25], note: 'decrement button' },
-            { loc: [27,33], note: 'increment button' },
-            { loc: [35,40], note: 'switch to (de)active buttons' },
-            { loc: [42,43] },
-            { loc: [29,30] },
+            { loc: [0,0], title: 'Class to Functional Component' },
+            { loc: [2,8] },
+            { loc: [12,28] },
           ]}
         />}
 
@@ -242,25 +224,23 @@ export default class Presentation extends Component {
 
         {<CodeSlide
           lang="js"
-          code={require('./code-examples/functionalwithhandlers.js').default}
+          code={require('./code-examples/withHandlers.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,0], title: 'stateless ExampleComponent' },
-            { loc: [11,14] },
-            { loc: [22,23] },
-            { loc: [30,31] },
-            { loc: [39,40] },
+            { loc: [0,1], title: 'Container - withHandlers' },
+            { loc: [20,28] },
+            { loc: [29,33] }
           ]}
         />}
 
         {<CodeSlide
           lang="js"
-          code={require('./code-examples/withHandlers.js').default}
+          code={require('./code-examples/functionalwithhandlers.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,1], title: 'withHandlers' },
-            { loc: [20,28] },
-            { loc: [29,33] }
+            { loc: [0,0], title: 'Stateless Component withHandlers' },
+            { loc: [2,8] },
+            { loc: [13,29] },
           ]}
         />}
 
@@ -273,7 +253,7 @@ export default class Presentation extends Component {
           code={require('./code-examples/containerComplete.js').default}
           textSize=".7em"
           ranges={[
-            { loc: [0,1], title: 'compose' },
+            { loc: [0,1], title: 'Composing HOCs' },
             { loc: [20, 31] },
             { loc: [21, 22] },
             { loc: [22, 30] },

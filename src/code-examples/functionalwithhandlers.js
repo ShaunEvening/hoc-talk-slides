@@ -1,45 +1,34 @@
 export default
 `import React from 'react';
-import {
-  View,
-  Switch,
-  Text,
-  TouchableOpacity,
-} from 'react-native';
 
 export const ExampleComponent = ({
-  isButtonActive,
+  areButtonsActive,
   counter,
-  handleIsButtonActive,
-  handleCounterDecrement,
+  handleAreButtonsActive,
   handleCounterIncrement,
+  handleCounterDecrement,
 }) => (
-  <View>
-        <View>
-          <Text>{counter}</Text>
-        </View>
-        <View>
-          <TouchableOpacity
-            disabled={!isButtonActive}
-            onPress={handleCounterDecrement}
-          >
-            <Text>Decrement</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <TouchableOpacity
-            disabled={!isButtonActive}
-            onPress={handleCounterDecrement}
-          >
-            <Text>Increment</Text>
-          </TouchableOpacity>
-        </View>
-        <View>
-          <Text>Is Counter active?</Text>
-          <Switch
-            value={isButtonActive}
-            onValueChange={handleIsButtonActive}
-          />
-        </View>
-      </View>
+  <div>
+    <div>
+      <h1>{counter}</h1>
+    </div>
+    <button
+      onClick={handleCounterIncrement}
+      disabled={!areButtonsActive}
+    >
+      INCREMENT
+    </button>
+    <button
+      onClick={handleCounterDecrement}
+      disabled={!areButtonsActive}
+    >
+      DECREMENT
+    </button>
+    <h4>Adjust Counter?</h4>
+    <input
+      type="checkbox"
+      value={areButtonsActive}
+      onChange={handleAreButtonsActive}
+    />
+  </div>
 );`
