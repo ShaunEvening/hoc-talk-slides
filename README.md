@@ -25,7 +25,7 @@ yarn start
 
 ---
 
-# Higher Order Components
+# Written Notes
 
 In this talk we're going to talk about taking functional programming patterns and using them
 inside of your react projects. You may already being using these patterns and not even realize it.
